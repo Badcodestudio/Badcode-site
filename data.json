@@ -86,7 +86,8 @@
       "color": "jh",
       "img": "images/mvg46vti.jpg",
       "spotify": "https://open.spotify.com/album/7oNbtEPeeGrcLCf4FOu7sO?si=7HBv8iKpRJ2-ru2xnTb80g&utm_source=copy-link",
-      "apple": "https://music.apple.com/us/album/jekyll-and-hyde-single/6809334453"
+      "apple": "https://music.apple.com/us/album/jekyll-and-hyde-single/6809334453",
+      "date": "2026-10-02"
     },
     {
       "title": "Unleash the Light",
@@ -95,7 +96,8 @@
       "code": "UL",
       "color": "ul",
       "img": "images/mvg47jo5.jpg",
-      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/unleash-the-light"
+      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/unleash-the-light",
+      "date": "2026-09-25"
     },
     {
       "title": "Circus of Delusion",
@@ -104,7 +106,8 @@
       "img": "images/mvg322bu.jpg",
       "spotify": "https://open.spotify.com/album/6m8VJI90tfNGkYCpOhii3o?si=D2vrm2PBSF6nPgNQFbk6Sg&utm_source=copy-link",
       "apple": "https://music.apple.com/us/song/circus-of-delusion/6819224167",
-      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/circus-of-delusion"
+      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/circus-of-delusion",
+      "date": "2026-10-16"
     },
     {
       "title": "Monsters Can Be Tender Too",
@@ -113,7 +116,8 @@
       "color": "mt",
       "img": "images/mvg49793.jpg",
       "spotify": "https://open.spotify.com/album/2CzkMHEPTDmQYU3JsexbLn?si=npZuNHNwRkCWndcd0oDsLg&utm_source=copy-link",
-      "apple": "https://music.apple.com/us/album/monsters-can-be-tender-too-single/6809511916"
+      "apple": "https://music.apple.com/us/album/monsters-can-be-tender-too-single/6809511916",
+      "date": "2026-10-09"
     },
     {
       "title": "One Question, One Answer",
@@ -122,7 +126,8 @@
       "img": "images/mvg2zkxb.jpg",
       "spotify": "https://open.spotify.com/album/1PLhtMAvmgWf7vzowUaHDX?si=ogJWci_iSJGKHOiEh72bsQ&utm_source=copy-link",
       "apple": "https://music.apple.com/us/album/one-question-one-answer-single/6823363491",
-      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/one-question-one-answer"
+      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/one-question-one-answer",
+      "date": "2026-10-16"
     },
     {
       "title": "Strays After Midnight",
@@ -131,7 +136,8 @@
       "img": "images/mvg3ytba.jpg",
       "spotify": "",
       "apple": "",
-      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/strays-after-midnight"
+      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/strays-after-midnight",
+      "date": "2026-10-30"
     },
     {
       "title": "Quad J's",
@@ -140,7 +146,8 @@
       "img": "",
       "spotify": "",
       "apple": "",
-      "hyperfollow": ""
+      "hyperfollow": "",
+      "date": "2026-11-06"
     }
   ],
   "videos": [
@@ -192,6 +199,14 @@
       "code": "RI",
       "color": "ri",
       "img": "images/mvg4emoy.jpg"
+    },
+    {
+      "title": "Circus of Delusion",
+      "url": "https://distrokid.com/videos/watch/dv-R6po6HmZ9",
+      "code": "CD",
+      "color": "hs",
+      "img": "images/mvg6bzh1.jpg",
+      "date": "2026-10-23"
     }
   ],
   "socials": [
