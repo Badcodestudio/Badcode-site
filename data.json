@@ -76,20 +76,13 @@
       "img": ""
     },
     {
-      "title": "Read It Again",
-      "spotify": "https://open.spotify.com/track/3ov2xTk2o2Ep8ifDhWp1ss",
-      "apple": "https://music.apple.com/ca/song/read-it-again/6804108328",
-      "code": "RI",
+      "title": "Don't Touch",
+      "spotify": "https://open.spotify.com/album/3Oo6ZOzx5c3U8SEUHFbq2B?si=1anqP_BXRHCByvYXewmHiQ&utm_source=copy-link",
+      "apple": "https://music.apple.com/us/album/dont-touch-single/6804108326",
+      "code": "DT",
       "color": "ri",
-      "img": ""
-    },
-    {
-      "title": "The Touch Rule",
-      "spotify": "https://open.spotify.com/track/6y5tTe8q2iJEVLYHZ3xfBn",
-      "apple": "https://music.apple.com/ca/song/the-touching-rule/6804108327",
-      "code": "TR",
-      "color": "tr",
-      "img": ""
+      "img": "",
+      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/dont-touch"
     },
     {
       "title": "Crimson and White",
