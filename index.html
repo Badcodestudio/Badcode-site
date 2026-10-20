@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -193,6 +192,8 @@ body.editing{padding-bottom:5.5rem}
   text-decoration:underline;padding:0;margin-left:.6rem}
 .hidden{display:none !important}
 .loaderr{padding:2rem 0;color:var(--dim);text-align:center}
+.rd{font-size:.72rem;color:var(--dim);text-align:center;letter-spacing:.06em}
+.ed-grid input[type=date]{color-scheme:dark;min-height:2.6rem}
 </style>
 </head>
 <body>
@@ -256,14 +257,14 @@ const REL_COLORS  = ["hs","jh","mt","ul","am","ri","tr","wf","wb","cw","dt"];
 /* What each editable list looks like. [key, label, kind] — kind: text | color | img */
 const SCHEMA = {
   books:   { one:"book",  title:"title", colors:BOOK_COLORS,
-    blank:{series:"",title:"",color:"bk1",img:"",paperback:"",kindle:""},
-    fields:[["series","Series","text"],["title","Title","text"],["color","Cover colour","color"],["img","Cover image","img"],["paperback","Paperback link","text"],["kindle","Kindle link","text"]] },
+    blank:{series:"",title:"",color:"bk1",img:"",paperback:"",kindle:"",date:""},
+    fields:[["series","Series","text"],["title","Title","text"],["color","Cover colour","color"],["img","Cover image","img"],["paperback","Paperback link","text"],["kindle","Kindle link","text"],["date","Release date","date"]] },
   music:   { one:"song",  title:"title", colors:REL_COLORS,
-    blank:{title:"",code:"",color:"hs",img:"",spotify:"",apple:"",hyperfollow:""},
-    fields:[["title","Title","text"],["code","Short code (2 letters)","text"],["color","Colour","color"],["img","Cover image","img"],["spotify","Spotify link","text"],["apple","Apple Music link","text"],["hyperfollow","Single Listen link","text"]] },
+    blank:{title:"",code:"",color:"hs",img:"",spotify:"",apple:"",hyperfollow:"",date:""},
+    fields:[["title","Title","text"],["code","Short code (2 letters)","text"],["color","Colour","color"],["img","Cover image","img"],["spotify","Spotify link","text"],["apple","Apple Music link","text"],["hyperfollow","Single Listen link","text"],["date","Release date","date"]] },
   videos:  { one:"video", title:"title", colors:REL_COLORS,
-    blank:{title:"",url:"",code:"",color:"hs",img:""},
-    fields:[["title","Title","text"],["url","Video link","text"],["code","Short code (2 letters)","text"],["color","Colour","color"],["img","Thumbnail image","img"]] },
+    blank:{title:"",url:"",code:"",color:"hs",img:"",date:""},
+    fields:[["title","Title","text"],["url","Video link","text"],["code","Short code (2 letters)","text"],["color","Colour","color"],["img","Thumbnail image","img"],["date","Release date","date"]] },
   socials: { one:"link",  title:"label",
     blank:{label:"",url:""},
     fields:[["label","Name","text"],["url","Link","text"]] }
@@ -276,6 +277,15 @@ let editing = false, dirty = false;
 const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const $ = id => document.getElementById(id);
 const musicLive = m => m.spotify || m.apple || m.hyperfollow;
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+/* "2026-10-16" -> "Oct 16, 2026". Anything else typed by hand is shown as written. */
+function fmtDate(s){
+  s = String(s == null ? "" : s).trim();
+  if(!s) return "";
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s);
+  if(!m || +m[2] < 1 || +m[2] > 12) return esc(s);
+  return MONTHS[+m[2] - 1] + " " + (+m[3]) + ", " + m[1];
+}
 const btn = (url, label) => url ? `<a class="fmt" href="${esc(url)}" target="_blank" rel="noopener">${label}</a>` : "";
 
 /* ---------- public rendering ---------- */
@@ -289,19 +299,19 @@ function bookHTML(b){
     ? `<div class="cover has-img"><img src="${esc(b.img)}" alt="${esc(title)} cover" loading="lazy"></div>`
     : `<div class="cover ${esc(b.color)}"><span class="series">${esc(b.series)}</span>
       <span class="ct${title.length > 40 ? " long" : ""}">${esc(title)}</span><span class="by">Philip Trapp</span></div>`;
-  return `<div class="book">${cover}<div class="fmts">${btn(b.paperback,"Paperback")}${btn(b.kindle,"Kindle")}</div></div>`;
+  return `<div class="book">${cover}<div class="fmts">${btn(b.paperback,"Paperback")}${btn(b.kindle,"Kindle")}</div>${b.date ? `<span class="rd">${fmtDate(b.date)}</span>` : ""}</div>`;
 }
 function musicHTML(m){
   const links = m.spotify || m.apple ? btn(m.spotify,"Spotify") + btn(m.apple,"Apple Music") : btn(m.hyperfollow,"Listen");
   return `<div class="row music${musicLive(m) ? "" : " off"}">${swatch(m)}
-    <span class="info"><span class="t">${esc(m.title)}</span><span class="m">Single · Philip Trapp</span></span>
+    <span class="info"><span class="t">${esc(m.title)}</span><span class="m">Single · Philip Trapp${m.date ? " · " + fmtDate(m.date) : ""}</span></span>
     ${musicLive(m) ? `<span class="links">${links}</span>` : `<span class="act">Coming soon</span>`}</div>`;
 }
 function videoHTML(v){
   const tag = v.url ? "a" : "div";
   const href = v.url ? ` href="${esc(v.url)}" target="_blank" rel="noopener"` : "";
   return `<${tag} class="row video${v.url ? "" : " off"}"${href}>${swatch(v)}
-    <span class="info"><span class="t">${esc(v.title)}</span><span class="m">Music video</span></span>
+    <span class="info"><span class="t">${esc(v.title)}</span><span class="m">Music video${v.date ? " · " + fmtDate(v.date) : ""}</span></span>
     <span class="act">${v.url ? "Watch" : "Coming soon"}</span></${tag}>`;
 }
 const PUBLIC = {
@@ -318,6 +328,9 @@ function fieldHTML(sec, i, f, item){
   const at = `data-sec="${sec}" data-i="${i}" data-f="${key}"`;
   if(kind === "color"){
     return `<label>${label}<select ${at}>${SCHEMA[sec].colors.map(c => `<option value="${c}"${c===val?" selected":""}>${c}</option>`).join("")}</select></label>`;
+  }
+  if(kind === "date"){
+    return `<label>${label}<input type="date" ${at} value="${esc(/^\d{4}-\d{2}-\d{2}$/.test(val) ? val : "")}"></label>`;
   }
   if(kind === "img"){
     return `<label>${label}<span class="ed-imgrow"><input type="text" ${at} value="${esc(val)}" placeholder="images/file.jpg or leave empty">
