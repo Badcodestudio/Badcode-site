@@ -124,6 +124,15 @@
       "spotify": "",
       "apple": "",
       "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/strays-after-midnight"
+    },
+    {
+      "title": "Quad J's",
+      "code": "QJ",
+      "color": "am",
+      "img": "",
+      "spotify": "",
+      "apple": "",
+      "hyperfollow": ""
     }
   ],
   "videos": [
@@ -193,6 +202,10 @@
     {
       "label": "LinkedIn",
       "url": "https://www.linkedin.com/in/philip-trapp-31520b221"
+    },
+    {
+      "label": "X",
+      "url": "https://x.com/chimeramorphic"
     }
   ]
 }
