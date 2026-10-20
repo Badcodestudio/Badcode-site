@@ -1,1 +1,531 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Badcode.Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0e0c0a; --panel:#171310; --line:#2b2318;
+  --bone:#f2ede4; --dim:#a89c86; --gold:#c9a86a; --gold-dim:#8a6f45;
+  --crimson:#b3122e; --crimson-deep:#7a0c20;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:4rem}
+body{background:var(--ink);color:var(--bone);
+  font-family:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  line-height:1.5;-webkit-font-smoothing:antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 45% at 50% -8%, rgba(179,18,46,.14), transparent),
+    radial-gradient(ellipse 55% 35% at 92% 108%, rgba(201,168,106,.07), transparent);
+  background-attachment:fixed}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+
+/* Top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(14,12,10,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;gap:1.5rem;overflow-x:auto;padding-top:.85rem;padding-bottom:.85rem;scrollbar-width:none}
+.bar a{text-decoration:none;font-size:.82rem;font-weight:600;color:var(--dim);white-space:nowrap;
+  text-transform:uppercase;letter-spacing:.12em;transition:color .2s}
+.bar a:hover,.bar a:focus-visible{color:var(--gold)}
+.bar a.active{color:var(--gold)}
+.bar a.brand{color:var(--bone);font-family:"Cormorant Garamond",serif;font-size:1rem;
+  letter-spacing:.06em;text-transform:none}
+.bar a.brand span{color:var(--crimson)}
+
+/* Hero */
+.hero{padding:4.5rem 0 3rem;text-align:center}
+.hero.compact{padding:3rem 0 2rem}
+.mark{font-family:"Cormorant Garamond",serif;font-weight:700;line-height:.95;letter-spacing:.02em;
+  font-size:clamp(2.8rem,11vw,6rem)}
+.mark span{color:var(--crimson)}
+.slogan{margin:1.1rem auto 0;color:var(--dim);max-width:36ch;
+  font-style:italic;font-family:"Cormorant Garamond",serif;font-size:1.25rem}
+.hero-rule{width:72px;height:2px;margin:1.8rem auto 0;border-radius:1px;
+  background:linear-gradient(90deg,var(--crimson),var(--gold))}
+.page-title{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(2rem,6vw,3rem);
+  letter-spacing:.02em;text-align:center}
+.page-title::before{content:'';display:inline-block;width:10px;height:10px;background:var(--crimson);
+  transform:rotate(45deg);margin-right:.85rem;vertical-align:baseline}
+.page-sub{color:var(--dim);text-align:center;margin-top:.6rem;font-size:.85rem;
+  text-transform:uppercase;letter-spacing:.16em}
+
+/* Sections */
+section{padding:2.75rem 0;border-top:1px solid var(--line)}
+section:first-of-type{border-top:none}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:1.4rem;flex-wrap:wrap}
+h2{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:2rem;letter-spacing:.02em}
+h2::before{content:'';display:inline-block;width:9px;height:9px;background:var(--crimson);
+  transform:rotate(45deg);margin-right:.75rem;vertical-align:baseline}
+.count{color:var(--dim);font-size:.82rem;text-transform:uppercase;letter-spacing:.14em}
+
+/* Teaser cards (home) */
+.teasers{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.teaser{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);
+  border-radius:10px;padding:1.6rem 1.4rem;transition:all .28s ease;position:relative;overflow:hidden}
+.teaser::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--crimson),var(--gold));opacity:0;transition:opacity .28s}
+.teaser:hover{transform:translateY(-4px);border-color:var(--gold-dim);
+  box-shadow:0 14px 32px rgba(0,0,0,.5)}
+.teaser:hover::before{opacity:1}
+.teaser h3{font-family:"Cormorant Garamond",serif;font-size:1.6rem;font-weight:600;margin-bottom:.4rem}
+.teaser p{color:var(--dim);font-size:.88rem;margin-bottom:1rem}
+.teaser .go{color:var(--gold);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em}
+
+/* Row list (music, video) */
+.rows{display:grid;gap:.65rem}
+@media(min-width:720px){.rows{grid-template-columns:1fr 1fr}}
+.row{display:flex;align-items:center;gap:.95rem;padding:.65rem .8rem;background:var(--panel);
+  border:1px solid var(--line);border-radius:8px;text-decoration:none;
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+a.row:hover,a.row:focus-visible{border-color:var(--gold-dim);outline:none;transform:translateY(-2px);
+  box-shadow:0 10px 26px rgba(0,0,0,.45)}
+.sw{flex:0 0 58px;height:58px;border-radius:6px;display:grid;place-items:center;
+  font-weight:800;font-size:.85rem;color:rgba(255,255,255,.9);letter-spacing:.06em;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+.row.video .sw{flex-basis:92px;height:52px}
+.swimg{flex:0 0 58px;height:58px;border-radius:6px;object-fit:cover;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+.row.video .swimg{flex-basis:92px;height:52px}
+.cover.has-img{padding:0}
+.cover.has-img img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:2/3}
+.info{flex:1;min-width:0}
+.info .t,.info .m{display:block}
+.t{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.m{font-size:.78rem;color:var(--dim)}
+.act{font-size:.78rem;font-weight:700;color:var(--gold);white-space:nowrap;padding-right:.3rem;
+  text-transform:uppercase;letter-spacing:.1em}
+.row.off{opacity:.5}
+.row.off .act{color:var(--dim)}
+.row.music{flex-wrap:wrap}
+.links{display:flex;gap:.45rem;padding-right:.2rem}
+.links .fmt{flex:0 0 auto;padding:.4rem .75rem}
+@media(max-width:480px){.links{flex-basis:100%;padding-left:calc(58px + .95rem)}}
+
+/* Books */
+.books{display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+.book{text-decoration:none;display:flex;flex-direction:column;gap:.7rem}
+.cover{aspect-ratio:2/3;border-radius:5px;padding:1.1rem 1rem;display:flex;flex-direction:column;
+  justify-content:space-between;border:1px solid rgba(255,255,255,.1);position:relative;overflow:hidden;
+  transition:transform .3s ease,box-shadow .3s ease;box-shadow:0 6px 18px rgba(0,0,0,.4)}
+.cover::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.14) 45%,transparent 60%)}
+.book:hover .cover{transform:translateY(-5px) rotate(-.5deg);box-shadow:0 16px 36px rgba(0,0,0,.55)}
+.series{font-size:.68rem;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+.ct{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:1.3rem;line-height:1.15;overflow-wrap:break-word}
+.ct.long{font-size:1rem}
+.by{font-size:.72rem;color:var(--dim);text-transform:uppercase;letter-spacing:.12em}
+.fmts{display:flex;gap:.45rem;flex-wrap:wrap}
+.fmt{flex:1;text-align:center;font-size:.78rem;font-weight:600;text-decoration:none;color:var(--gold);
+  border:1px solid var(--line);border-radius:5px;padding:.5rem .5rem;white-space:nowrap;
+  transition:all .22s ease;background:rgba(201,168,106,.04)}
+.fmt:hover,.fmt:focus-visible{border-color:var(--crimson);color:#fff;background:var(--crimson);outline:none}
+
+.socials{display:flex;flex-wrap:wrap;gap:.65rem}
+.socials .fmt{flex:0 0 auto;padding:.75rem 1.35rem;font-size:.85rem}
+
+/* Picfair */
+.store{background:linear-gradient(135deg,rgba(179,18,46,.16),var(--panel) 55%);
+  border:1px solid rgba(201,168,106,.22);border-radius:10px;padding:1.75rem;
+  display:flex;flex-wrap:wrap;gap:1.1rem;align-items:center;justify-content:space-between}
+.store p{color:var(--dim);max-width:44ch}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--gold),#a8844f);color:#14110d;font-weight:700;
+  text-decoration:none;padding:.8rem 1.5rem;border-radius:5px;transition:all .25s ease}
+.btn:hover,.btn:focus-visible{transform:translateY(-2px);box-shadow:0 10px 26px rgba(201,168,106,.35);outline:none}
+
+footer{border-top:1px solid var(--line);padding:2.25rem 0 3rem;color:var(--dim);font-size:.9rem;margin-top:2rem}
+footer a{color:var(--gold);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+/* Release colors — deepened for the dark theme */
+.cw{background:linear-gradient(135deg,#8b0000,#3a0d12)}
+.dt{background:linear-gradient(135deg,#191970,#0d0d2b)}
+.am{background:linear-gradient(135deg,#0a1a8b,#02030a)}
+.ul{background:linear-gradient(135deg,#8a6a1f,#241a08)}
+.mt{background:linear-gradient(135deg,#4b0082,#150a24)}
+.jh{background:linear-gradient(90deg,#2a2a2a 50%,#6f6f6f 50%)}
+.hs{background:linear-gradient(135deg,#8a6a1f,#2b2008)}
+.wf{background:linear-gradient(135deg,#5f7a8f,#1a2630)}
+.wb{background:linear-gradient(135deg,#3b3b44,#0a0a0d)}
+.tr{background:linear-gradient(135deg,#2f5a3a,#0f1a12)}
+.ri{background:linear-gradient(135deg,#5a4a2e,#16120c)}
+.bk1{background:linear-gradient(160deg,#2b3d55,#0b0d12)}
+.bk2{background:linear-gradient(160deg,#453e4d,#101014)}
+.bk3{background:linear-gradient(160deg,#7a1616,#1a0d0d)}
+.bk4{background:linear-gradient(160deg,#e9e6ee,#8e8a96)}
+.bk4 .ct{color:#16151B}.bk4 .by{color:#3a3842}.bk4 .series{color:#6b5320}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ---------- Edit mode ---------- */
+.editbar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(23,19,16,.97);
+  border-top:1px solid var(--gold-dim);padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom,0px));
+  display:none;gap:.6rem;align-items:center;flex-wrap:wrap}
+body.editing .editbar{display:flex}
+body.editing{padding-bottom:5.5rem}
+.editbar .msg{flex:1 1 100%;font-size:.8rem;color:var(--dim)}
+.editbar .msg.err{color:#ff8a8a}
+.editbar .msg.ok{color:#9be29b}
+.ebtn{font:inherit;font-size:.82rem;font-weight:700;padding:.6rem 1rem;border-radius:6px;cursor:pointer;
+  border:1px solid var(--line);background:var(--panel);color:var(--bone)}
+.ebtn.save{background:linear-gradient(135deg,var(--gold),#a8844f);color:#14110d;border-color:transparent}
+.ebtn.danger{color:#ff8a8a}
+.ebtn:disabled{opacity:.5}
+.ed-item{grid-column:1/-1;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:.9rem;display:grid;gap:.6rem}
+.ed-item h4{font-family:"Cormorant Garamond",serif;font-size:1.15rem;font-weight:600;overflow-wrap:anywhere}
+.ed-grid{display:grid;gap:.55rem;grid-template-columns:1fr}
+@media(min-width:720px){.ed-grid{grid-template-columns:1fr 1fr}}
+.ed-grid label{display:grid;gap:.2rem;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--dim)}
+.ed-grid input,.ed-grid select{font:inherit;font-size:1rem;text-transform:none;letter-spacing:0;color:var(--bone);
+  background:var(--ink);border:1px solid var(--line);border-radius:5px;padding:.55rem .6rem;width:100%}
+.ed-imgrow{display:flex;gap:.4rem}
+.ed-imgrow input[type=text]{flex:1;min-width:0}
+.ed-tools{display:flex;gap:.45rem;flex-wrap:wrap}
+.ed-add{grid-column:1/-1}
+.editlink{background:none;border:0;color:var(--dim);font:inherit;font-size:.8rem;cursor:pointer;
+  text-decoration:underline;padding:0;margin-left:.6rem}
+.hidden{display:none !important}
+.loaderr{padding:2rem 0;color:var(--dim);text-align:center}
+</style>
+</head>
+<body>
+
+<nav class="bar" aria-label="Sections">
+  <div class="wrap">
+    <a href="#books">Books</a><a href="#music">Music</a><a href="#video">Video</a><a href="#photos">Photos</a><a href="#follow">Follow</a><a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <header class="hero">
+    <h1 class="mark">Badcode<span>.</span>Studio</h1>
+    <p class="slogan">I&rsquo;m the new BS and there&rsquo;s no BS in that statement.</p>
+    <div class="hero-rule"></div>
+  </header>
+
+  <div id="load-error" class="loaderr hidden"></div>
+
+  <section id="books"><div class="head"><h2>Books</h2><span class="count" id="books-count"></span></div><div class="books" id="books-list"></div></section>
+  <section id="music"><div class="head"><h2>Music</h2><span class="count" id="music-count"></span></div><div class="rows" id="music-list"></div></section>
+  <section id="video"><div class="head"><h2>Video</h2><span class="count" id="video-count"></span></div><div class="rows" id="video-list"></div></section>
+
+  <section id="photos">
+    <div class="head"><h2>Photography</h2></div>
+    <div class="store">
+      <p>Real photographs, storms and skies included. Prints and digital downloads through Picfair.</p>
+      <a class="btn" id="picfair-link" href="#" target="_blank" rel="noopener">Browse the Picfair store</a>
+    </div>
+    <div id="picfair-edit" class="ed-grid hidden" style="margin-top:.8rem"></div>
+  </section>
+  <section id="follow">
+    <div class="head"><h2>Follow</h2></div>
+    <div class="socials" id="socials-list"></div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <p>Production inquiries and custom work:<br>
+    <a href="mailto:contact@badcode.studio">contact@badcode.studio</a></p>
+    <p style="margin-top:1rem">&copy; 2026 Badcode.Studio <button class="editlink" id="edit-link" type="button">Edit</button></p>
+  </div>
+</footer>
+
+<div class="editbar" id="editbar">
+  <div class="msg" id="edit-msg">Editing. Nothing is published until you tap Save.</div>
+  <button class="ebtn save" id="btn-save" type="button">Save</button>
+  <button class="ebtn" id="btn-done" type="button">Done</button>
+  <button class="ebtn danger" id="btn-signout" type="button">Sign out</button>
+</div>
+
+<script>
+/* Your content lives in data.json. This file is only the page layout and the edit tool. */
+const REPO = "Badcodestudio/badcode-site";   /* GitHub owner/repository */
+const BRANCH = "main";
+
+const BOOK_COLORS = ["bk1","bk2","bk3","bk4"];
+const REL_COLORS  = ["hs","jh","mt","ul","am","ri","tr","wf","wb","cw","dt"];
+
+/* What each editable list looks like. [key, label, kind] — kind: text | color | img */
+const SCHEMA = {
+  books:   { one:"book",  title:"title", colors:BOOK_COLORS,
+    blank:{series:"",title:"",color:"bk1",img:"",paperback:"",kindle:""},
+    fields:[["series","Series","text"],["title","Title","text"],["color","Cover colour","color"],["img","Cover image","img"],["paperback","Paperback link","text"],["kindle","Kindle link","text"]] },
+  music:   { one:"song",  title:"title", colors:REL_COLORS,
+    blank:{title:"",code:"",color:"hs",img:"",spotify:"",apple:"",hyperfollow:""},
+    fields:[["title","Title","text"],["code","Short code (2 letters)","text"],["color","Colour","color"],["img","Cover image","img"],["spotify","Spotify link","text"],["apple","Apple Music link","text"],["hyperfollow","Single Listen link","text"]] },
+  videos:  { one:"video", title:"title", colors:REL_COLORS,
+    blank:{title:"",url:"",code:"",color:"hs",img:""},
+    fields:[["title","Title","text"],["url","Video link","text"],["code","Short code (2 letters)","text"],["color","Colour","color"],["img","Thumbnail image","img"]] },
+  socials: { one:"link",  title:"label",
+    blank:{label:"",url:""},
+    fields:[["label","Name","text"],["url","Link","text"]] }
+};
+const LIST_ID = { books:"books-list", music:"music-list", videos:"video-list", socials:"socials-list" };
+
+let DATA = null;
+let editing = false, dirty = false;
+
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const $ = id => document.getElementById(id);
+const musicLive = m => m.spotify || m.apple || m.hyperfollow;
+const btn = (url, label) => url ? `<a class="fmt" href="${esc(url)}" target="_blank" rel="noopener">${label}</a>` : "";
+
+/* ---------- public rendering ---------- */
+function swatch(item){
+  if(item.img) return `<img class="swimg" src="${esc(item.img)}" alt="" loading="lazy">`;
+  return `<span class="sw ${esc(item.color)}" aria-hidden="true">${esc(item.code)}</span>`;
+}
+function bookHTML(b){
+  const title = b.title || "";
+  const cover = b.img
+    ? `<div class="cover has-img"><img src="${esc(b.img)}" alt="${esc(title)} cover" loading="lazy"></div>`
+    : `<div class="cover ${esc(b.color)}"><span class="series">${esc(b.series)}</span>
+      <span class="ct${title.length > 40 ? " long" : ""}">${esc(title)}</span><span class="by">Philip Trapp</span></div>`;
+  return `<div class="book">${cover}<div class="fmts">${btn(b.paperback,"Paperback")}${btn(b.kindle,"Kindle")}</div></div>`;
+}
+function musicHTML(m){
+  const links = m.spotify || m.apple ? btn(m.spotify,"Spotify") + btn(m.apple,"Apple Music") : btn(m.hyperfollow,"Listen");
+  return `<div class="row music${musicLive(m) ? "" : " off"}">${swatch(m)}
+    <span class="info"><span class="t">${esc(m.title)}</span><span class="m">Single · Philip Trapp</span></span>
+    ${musicLive(m) ? `<span class="links">${links}</span>` : `<span class="act">Coming soon</span>`}</div>`;
+}
+function videoHTML(v){
+  const tag = v.url ? "a" : "div";
+  const href = v.url ? ` href="${esc(v.url)}" target="_blank" rel="noopener"` : "";
+  return `<${tag} class="row video${v.url ? "" : " off"}"${href}>${swatch(v)}
+    <span class="info"><span class="t">${esc(v.title)}</span><span class="m">Music video</span></span>
+    <span class="act">${v.url ? "Watch" : "Coming soon"}</span></${tag}>`;
+}
+const PUBLIC = {
+  books: b => bookHTML(b),
+  music: m => musicHTML(m),
+  videos: v => videoHTML(v),
+  socials: x => btn(x.url, esc(x.label))
+};
+
+/* ---------- editor rendering ---------- */
+function fieldHTML(sec, i, f, item){
+  const [key, label, kind] = f;
+  const val = item[key] == null ? "" : item[key];
+  const at = `data-sec="${sec}" data-i="${i}" data-f="${key}"`;
+  if(kind === "color"){
+    return `<label>${label}<select ${at}>${SCHEMA[sec].colors.map(c => `<option value="${c}"${c===val?" selected":""}>${c}</option>`).join("")}</select></label>`;
+  }
+  if(kind === "img"){
+    return `<label>${label}<span class="ed-imgrow"><input type="text" ${at} value="${esc(val)}" placeholder="images/file.jpg or leave empty">
+      <button class="ebtn" type="button" data-act="upload" data-sec="${sec}" data-i="${i}" data-f="${key}">Upload</button></span></label>`;
+  }
+  return `<label>${label}<input type="text" ${at} value="${esc(val)}" autocapitalize="off" autocomplete="off"></label>`;
+}
+function editorHTML(sec){
+  const S = SCHEMA[sec], list = DATA[sec];
+  const items = list.map((item, i) => `<div class="ed-item">
+    <h4>${esc(item[S.title] || "(untitled " + S.one + ")")}</h4>
+    <div class="ed-grid">${S.fields.map(f => fieldHTML(sec, i, f, item)).join("")}</div>
+    <div class="ed-tools">
+      <button class="ebtn" type="button" data-act="up" data-sec="${sec}" data-i="${i}"${i===0?" disabled":""}>Move up</button>
+      <button class="ebtn" type="button" data-act="down" data-sec="${sec}" data-i="${i}"${i===list.length-1?" disabled":""}>Move down</button>
+      <button class="ebtn danger" type="button" data-act="del" data-sec="${sec}" data-i="${i}">Delete</button>
+    </div></div>`).join("");
+  return items + `<div class="ed-add"><button class="ebtn" type="button" data-act="add" data-sec="${sec}">+ Add ${S.one}</button></div>`;
+}
+
+function renderAll(){
+  if(!DATA) return;
+  for(const sec of Object.keys(SCHEMA)){
+    const el = $(LIST_ID[sec]); if(!el) continue;
+    // Editors need full-width stacking; give the list a plain block layout while editing.
+    el.style.display = editing ? "grid" : "";
+    el.style.gridTemplateColumns = editing ? "1fr" : "";
+    el.innerHTML = editing ? editorHTML(sec) : DATA[sec].map(PUBLIC[sec]).join("");
+  }
+  const pe = $("picfair-edit");
+  pe.classList.toggle("hidden", !editing);
+  if(editing){
+    pe.innerHTML = `<label>Picfair store link<input type="text" id="picfair-input" value="${esc(DATA.picfair)}" autocapitalize="off" autocomplete="off"></label>`;
+  }
+  $("picfair-link").href = DATA.picfair || "#";
+  const set = (id, txt) => { const e = $(id); if(e) e.textContent = txt; };
+  set("books-count", DATA.books.length + " on Amazon");
+  set("music-count", DATA.music.filter(musicLive).length + " releases");
+  const liveV = DATA.videos.filter(v => v.url).length;
+  set("video-count", liveV ? liveV + " videos" : "Links coming soon");
+}
+
+/* ---------- loading ---------- */
+async function load(){
+  try{
+    const r = await fetch("data.json?v=" + Date.now(), {cache:"no-store"});
+    if(!r.ok) throw new Error("HTTP " + r.status);
+    DATA = await r.json();
+    for(const k of Object.keys(SCHEMA)) if(!Array.isArray(DATA[k])) DATA[k] = [];
+    if(typeof DATA.picfair !== "string") DATA.picfair = "";
+    renderAll();
+  }catch(e){
+    const box = $("load-error");
+    box.classList.remove("hidden");
+    box.textContent = location.protocol === "file:"
+      ? "This page loads its content from data.json, so it has to be opened from the website, not from a file on your phone."
+      : "The content could not be loaded. Please refresh in a moment.";
+  }
+}
+
+/* ---------- GitHub saving ---------- */
+const store = {
+  get(){ try{ return localStorage.getItem("bcs_token") || ""; }catch(_){ return ""; } },
+  set(v){ try{ localStorage.setItem("bcs_token", v); }catch(_){} },
+  clear(){ try{ localStorage.removeItem("bcs_token"); }catch(_){} }
+};
+let TOKEN = store.get();
+
+async function gh(method, path, body){
+  const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, {
+    method,
+    headers:{ "Authorization":"Bearer " + TOKEN, "Accept":"application/vnd.github+json", "Content-Type":"application/json" },
+    body: body ? JSON.stringify(body) : undefined
+  });
+  let json = null; try{ json = await r.json(); }catch(_){}
+  if(!r.ok){
+    const e = new Error((json && json.message) || ("HTTP " + r.status)); e.status = r.status; throw e;
+  }
+  return json;
+}
+const b64text = s => btoa(unescape(encodeURIComponent(s)));
+
+function msg(text, cls){ const m = $("edit-msg"); m.textContent = text; m.className = "msg" + (cls ? " " + cls : ""); }
+
+async function startEditing(){
+  if(!DATA){ return; }
+  if(!TOKEN){
+    const t = (prompt("Paste your GitHub token to edit this page. It stays on this device only.") || "").trim();
+    if(!t) return;
+    TOKEN = t;
+  }
+  try{
+    await gh("GET", `data.json?ref=${BRANCH}`);   // proves the token works and can see the repo
+    store.set(TOKEN);
+  }catch(e){
+    store.clear(); TOKEN = "";
+    alert(e.status === 401 || e.status === 404
+      ? "GitHub did not accept that token for " + REPO + ". Check that it was created for that repository with Contents: Read and write."
+      : "Could not reach GitHub: " + e.message);
+    return;
+  }
+  editing = true; document.body.classList.add("editing");
+  msg("Editing. Nothing is published until you tap Save.");
+  renderAll();
+}
+function stopEditing(){
+  const discard = dirty;
+  if(discard && !confirm("You have unsaved changes. Leave editing anyway and lose them?")) return;
+  editing = false; dirty = false; document.body.classList.remove("editing");
+  /* Saved changes are already on screen (the live site takes a minute to catch up), so only
+     reload from the site when unsaved edits are being thrown away. */
+  if(discard) load(); else renderAll();
+}
+
+async function save(){
+  const b = $("btn-save"); b.disabled = true; msg("Saving…");
+  try{
+    // Clean up before saving: trim text and drop completely empty items.
+    for(const sec of Object.keys(SCHEMA)){
+      DATA[sec] = DATA[sec].map(it => { const o = {}; for(const k in it) o[k] = typeof it[k] === "string" ? it[k].trim() : it[k]; return o; })
+                           .filter(it => SCHEMA[sec].fields.some(([k]) => k !== "color" && it[k]));
+    }
+    DATA.picfair = (DATA.picfair || "").trim();
+    const cur = await gh("GET", `data.json?ref=${BRANCH}`);
+    await gh("PUT", "data.json", {
+      message: "Update site content",
+      content: b64text(JSON.stringify(DATA, null, 2) + "\n"),
+      sha: cur.sha, branch: BRANCH
+    });
+    dirty = false; renderAll();
+    msg("Saved. The live site updates in about a minute.", "ok");
+  }catch(e){
+    if(e.status === 401 || e.status === 403) msg("GitHub refused the save. The token may have expired or lacks write access.", "err");
+    else if(e.status === 409) msg("The file changed on GitHub while you were editing. Tap Save again.", "err");
+    else msg("Save failed: " + e.message, "err");
+  }finally{ b.disabled = false; }
+}
+
+/* ---------- image upload ---------- */
+function pickFile(){
+  return new Promise(res => {
+    const inp = document.createElement("input");
+    inp.type = "file"; inp.accept = "image/*";
+    inp.onchange = () => res(inp.files && inp.files[0] || null);
+    inp.click();
+  });
+}
+function shrink(file, max){
+  return new Promise((res, rej) => {
+    const url = URL.createObjectURL(file), img = new Image();
+    img.onload = () => {
+      const s = Math.min(1, max / Math.max(img.width, img.height));
+      const c = document.createElement("canvas");
+      c.width = Math.round(img.width * s); c.height = Math.round(img.height * s);
+      c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+      URL.revokeObjectURL(url);
+      res(c.toDataURL("image/jpeg", 0.85).split(",")[1]);
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); rej(new Error("That file is not an image the browser can read.")); };
+    img.src = url;
+  });
+}
+async function upload(sec, i, key){
+  const file = await pickFile(); if(!file) return;
+  msg("Uploading image…");
+  try{
+    const data = await shrink(file, 900);
+    const name = "images/" + Date.now().toString(36) + ".jpg";
+    await gh("PUT", name, { message: "Add image", content: data, branch: BRANCH });
+    DATA[sec][i][key] = name; dirty = true; renderAll();
+    msg("Image uploaded. Tap Save to publish the change.", "ok");
+  }catch(e){ msg("Upload failed: " + e.message, "err"); }
+}
+
+/* ---------- events ---------- */
+document.addEventListener("input", e => {
+  const t = e.target;
+  if(t.id === "picfair-input"){ DATA.picfair = t.value; dirty = true; return; }
+  if(!editing || !t.dataset || !t.dataset.sec) return;
+  DATA[t.dataset.sec][+t.dataset.i][t.dataset.f] = t.value; dirty = true;
+});
+document.addEventListener("change", e => {
+  const t = e.target;
+  if(editing && t.tagName === "SELECT" && t.dataset.sec){ DATA[t.dataset.sec][+t.dataset.i][t.dataset.f] = t.value; dirty = true; }
+});
+document.addEventListener("click", e => {
+  const t = e.target.closest("[data-act]"); if(!t || !editing) return;
+  const sec = t.dataset.sec, i = +t.dataset.i, list = DATA[sec];
+  const act = t.dataset.act;
+  if(act === "upload"){ upload(sec, i, t.dataset.f); return; }
+  if(act === "add"){ list.push({...SCHEMA[sec].blank}); }
+  else if(act === "del"){ if(!confirm("Delete this " + SCHEMA[sec].one + "?")) return; list.splice(i, 1); }
+  else if(act === "up" && i > 0){ [list[i-1], list[i]] = [list[i], list[i-1]]; }
+  else if(act === "down" && i < list.length - 1){ [list[i+1], list[i]] = [list[i], list[i+1]]; }
+  dirty = true; renderAll();
+});
+$("edit-link").addEventListener("click", startEditing);
+$("btn-save").addEventListener("click", save);
+$("btn-done").addEventListener("click", stopEditing);
+$("btn-signout").addEventListener("click", () => {
+  if(dirty && !confirm("You have unsaved changes. Sign out anyway?")) return;
+  const discard = dirty;
+  store.clear(); TOKEN = ""; dirty = false; editing = false; document.body.classList.remove("editing");
+  if(discard) load(); else renderAll();
+});
+window.addEventListener("beforeunload", e => { if(dirty){ e.preventDefault(); e.returnValue = ""; } });
+
+load();
+</script>
+</body>
+</html>
