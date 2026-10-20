@@ -1,1 +1,179 @@
 
+{
+  "picfair": "https://badcodestudio.picfair.com",
+  "books": [
+    {
+      "series": "Read It Again · Book 1",
+      "title": "Was Lucifer Feminine?",
+      "color": "bk1",
+      "img": "",
+      "kindle": "https://a.co/d/05PqjEZM",
+      "paperback": "https://a.co/d/02bJQPI6"
+    },
+    {
+      "series": "Read It Again · Book 2",
+      "title": "Who Were the Sons of God?",
+      "color": "bk2",
+      "img": "",
+      "kindle": "https://a.co/d/0fqy3cW2",
+      "paperback": "https://a.co/d/04o15yKL"
+    },
+    {
+      "series": "Talking to the Genie",
+      "title": "How We Taught Each Other How to Make Crimson Walk With Wings Below Her Knees",
+      "color": "bk3",
+      "img": "",
+      "kindle": "https://a.co/d/02khsO1J",
+      "paperback": "https://a.co/d/061bcz6w"
+    },
+    {
+      "series": "Self Help · The Void Edition",
+      "title": "With Any Problem You Have — for Songwriters, for Anyone",
+      "color": "bk4",
+      "img": "",
+      "kindle": "",
+      "paperback": "https://a.co/d/0ddBjOmh"
+    }
+  ],
+  "music": [
+    {
+      "title": "He Sings Over You",
+      "spotify": "https://open.spotify.com/track/2PfLh8SYH0eT86WixL6CqI",
+      "apple": "https://music.apple.com/ca/song/he-sings-over-you/6810020432",
+      "code": "HS",
+      "color": "hs",
+      "img": ""
+    },
+    {
+      "title": "Jekyll and Hyde",
+      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/jekyll-and-hyde",
+      "code": "JH",
+      "color": "jh",
+      "img": ""
+    },
+    {
+      "title": "Monsters Can Be Tender Too",
+      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/monsters-can-be-tender-too",
+      "code": "MT",
+      "color": "mt",
+      "img": ""
+    },
+    {
+      "title": "Unleash the Light",
+      "spotify": "https://open.spotify.com/track/7hIoiGjABmpcYioQQkSeZJ",
+      "apple": "https://music.apple.com/ca/song/unleash-the-light/6807696499",
+      "code": "UL",
+      "color": "ul",
+      "img": ""
+    },
+    {
+      "title": "Abyssal Metamorphosis",
+      "spotify": "https://open.spotify.com/track/36iIJ8xVgY00kbGIfTsBki",
+      "apple": "https://music.apple.com/ca/song/abyssal-metamorphosis/6807346410",
+      "code": "AM",
+      "color": "am",
+      "img": ""
+    },
+    {
+      "title": "Read It Again",
+      "spotify": "https://open.spotify.com/track/3ov2xTk2o2Ep8ifDhWp1ss",
+      "apple": "https://music.apple.com/ca/song/read-it-again/6804108328",
+      "code": "RI",
+      "color": "ri",
+      "img": ""
+    },
+    {
+      "title": "The Touch Rule",
+      "spotify": "https://open.spotify.com/track/6y5tTe8q2iJEVLYHZ3xfBn",
+      "apple": "https://music.apple.com/ca/song/the-touching-rule/6804108327",
+      "code": "TR",
+      "color": "tr",
+      "img": ""
+    },
+    {
+      "title": "Walking by Faith",
+      "spotify": "https://open.spotify.com/track/3Byl7Nm7skCxrtR8fMMgiA",
+      "apple": "https://music.apple.com/us/song/walking-in-faith-white/6803820472",
+      "code": "WF",
+      "color": "wf",
+      "img": ""
+    },
+    {
+      "title": "Walking Blind",
+      "spotify": "https://open.spotify.com/track/07lYsEyP9rMyT1zSO9Zdhr",
+      "apple": "https://music.apple.com/us/song/walking-blind-crimson/6803820468",
+      "code": "WB",
+      "color": "wb",
+      "img": ""
+    }
+  ],
+  "videos": [
+    {
+      "title": "He Sings Over You",
+      "url": "https://distrokid.com/videos/watch/dv-5hLj7Z2Np",
+      "code": "HS",
+      "color": "hs",
+      "img": ""
+    },
+    {
+      "title": "Unleash the Light",
+      "url": "https://distrokid.com/videos/watch/dv-N0ug4R2Ll",
+      "code": "UL",
+      "color": "ul",
+      "img": ""
+    },
+    {
+      "title": "Walking by Faith",
+      "url": "https://open.spotify.com/track/5UQYhaqKysyOHfoGGlSdAI",
+      "code": "WF",
+      "color": "wf",
+      "img": ""
+    },
+    {
+      "title": "Walking Blind",
+      "url": "https://open.spotify.com/track/1kyv97Vu4aah2mcuzig3XI",
+      "code": "WB",
+      "color": "wb",
+      "img": ""
+    },
+    {
+      "title": "Abyssal Metamorphosis",
+      "url": "https://open.spotify.com/track/5n23OJDnP3egi6Dpp77Ikz",
+      "code": "AM",
+      "color": "am",
+      "img": ""
+    },
+    {
+      "title": "The Touch Rule",
+      "url": "https://open.spotify.com/track/41TTKCCB1bjCDpYIIS7cHM",
+      "code": "TR",
+      "color": "tr",
+      "img": ""
+    },
+    {
+      "title": "Read It Again",
+      "url": "https://open.spotify.com/track/4RYqnEpNvHib6LvCBORBMg",
+      "code": "RI",
+      "color": "ri",
+      "img": ""
+    }
+  ],
+  "socials": [
+    {
+      "label": "TikTok",
+      "url": "https://www.tiktok.com/@badcode_studio"
+    },
+    {
+      "label": "Instagram",
+      "url": "https://www.instagram.com/badcode.studio"
+    },
+    {
+      "label": "YouTube",
+      "url": "https://www.youtube.com/@badcode.studio"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/philip-trapp-31520b221"
+    }
+  ]
+}
