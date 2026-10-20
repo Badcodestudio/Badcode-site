@@ -80,16 +80,6 @@
       "date": "2026-09-18"
     },
     {
-      "title": "Jekyll and Hyde",
-      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/jekyll-and-hyde",
-      "code": "JH",
-      "color": "jh",
-      "img": "images/mvg46vti.jpg",
-      "spotify": "https://open.spotify.com/album/7oNbtEPeeGrcLCf4FOu7sO?si=7HBv8iKpRJ2-ru2xnTb80g&utm_source=copy-link",
-      "apple": "https://music.apple.com/us/album/jekyll-and-hyde-single/6809334453",
-      "date": "2026-10-02"
-    },
-    {
       "title": "Unleash the Light",
       "spotify": "https://open.spotify.com/track/7hIoiGjABmpcYioQQkSeZJ",
       "apple": "https://music.apple.com/ca/song/unleash-the-light/6807696499",
@@ -100,14 +90,14 @@
       "date": "2026-09-25"
     },
     {
-      "title": "Circus of Delusion",
-      "code": "CD",
-      "color": "am",
-      "img": "images/mvg322bu.jpg",
-      "spotify": "https://open.spotify.com/album/6m8VJI90tfNGkYCpOhii3o?si=D2vrm2PBSF6nPgNQFbk6Sg&utm_source=copy-link",
-      "apple": "https://music.apple.com/us/song/circus-of-delusion/6819224167",
-      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/circus-of-delusion",
-      "date": "2026-10-16"
+      "title": "Jekyll and Hyde",
+      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/jekyll-and-hyde",
+      "code": "JH",
+      "color": "jh",
+      "img": "images/mvg46vti.jpg",
+      "spotify": "https://open.spotify.com/album/7oNbtEPeeGrcLCf4FOu7sO?si=7HBv8iKpRJ2-ru2xnTb80g&utm_source=copy-link",
+      "apple": "https://music.apple.com/us/album/jekyll-and-hyde-single/6809334453",
+      "date": "2026-10-02"
     },
     {
       "title": "Monsters Can Be Tender Too",
@@ -118,6 +108,16 @@
       "spotify": "https://open.spotify.com/album/2CzkMHEPTDmQYU3JsexbLn?si=npZuNHNwRkCWndcd0oDsLg&utm_source=copy-link",
       "apple": "https://music.apple.com/us/album/monsters-can-be-tender-too-single/6809511916",
       "date": "2026-10-09"
+    },
+    {
+      "title": "Circus of Delusion",
+      "code": "CD",
+      "color": "am",
+      "img": "images/mvg322bu.jpg",
+      "spotify": "https://open.spotify.com/album/6m8VJI90tfNGkYCpOhii3o?si=D2vrm2PBSF6nPgNQFbk6Sg&utm_source=copy-link",
+      "apple": "https://music.apple.com/us/song/circus-of-delusion/6819224167",
+      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/circus-of-delusion",
+      "date": "2026-10-16"
     },
     {
       "title": "One Question, One Answer",
@@ -152,27 +152,20 @@
   ],
   "videos": [
     {
-      "title": "Unleash the Light",
-      "url": "https://distrokid.com/videos/watch/dv-N0ug4R2Ll",
-      "code": "UL",
-      "color": "ul",
-      "img": "images/mvg4hq5s.jpg",
-      "date": "2026-10-02"
-    },
-    {
-      "title": "He Sings Over You",
-      "url": "https://distrokid.com/videos/watch/dv-5hLj7Z2Np",
-      "code": "HS",
-      "color": "hs",
-      "img": "images/mvg4i72e.jpg",
-      "date": "2026-10-09"
-    },
-    {
       "title": "Read It Again",
       "url": "",
       "code": "RI",
       "color": "ri",
-      "img": "images/mvg4emoy.jpg"
+      "img": "images/mvg4emoy.jpg",
+      "date": "2026-09-11"
+    },
+    {
+      "title": "The Touch Rule",
+      "url": "https://open.spotify.com/track/41TTKCCB1bjCDpYIIS7cHM",
+      "code": "TR",
+      "color": "tr",
+      "img": "images/mvg4f12g.jpg",
+      "date": "2026-09-12"
     },
     {
       "title": "Walking by Faith",
@@ -199,11 +192,20 @@
       "date": "2026-09-25"
     },
     {
-      "title": "The Touch Rule",
-      "url": "https://open.spotify.com/track/41TTKCCB1bjCDpYIIS7cHM",
-      "code": "TR",
-      "color": "tr",
-      "img": "images/mvg4f12g.jpg"
+      "title": "Unleash the Light",
+      "url": "https://distrokid.com/videos/watch/dv-N0ug4R2Ll",
+      "code": "UL",
+      "color": "ul",
+      "img": "images/mvg4hq5s.jpg",
+      "date": "2026-10-02"
+    },
+    {
+      "title": "He Sings Over You",
+      "url": "https://distrokid.com/videos/watch/dv-5hLj7Z2Np",
+      "code": "HS",
+      "color": "hs",
+      "img": "images/mvg4i72e.jpg",
+      "date": "2026-10-09"
     },
     {
       "title": "Circus of Delusion",
