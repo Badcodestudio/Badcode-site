@@ -65,7 +65,8 @@
       "apple": "https://music.apple.com/ca/song/unleash-the-light/6807696499",
       "code": "UL",
       "color": "ul",
-      "img": ""
+      "img": "",
+      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/unleash-the-light"
     },
     {
       "title": "Abyssal Metamorphosis",
@@ -73,7 +74,8 @@
       "apple": "https://music.apple.com/ca/song/abyssal-metamorphosis/6807346410",
       "code": "AM",
       "color": "am",
-      "img": ""
+      "img": "",
+      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/abyssal-metamorphosis"
     },
     {
       "title": "Don't Touch",
