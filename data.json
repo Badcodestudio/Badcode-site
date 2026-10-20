@@ -68,7 +68,8 @@
       "apple": "https://music.apple.com/ca/song/he-sings-over-you/6810020432",
       "code": "HS",
       "color": "hs",
-      "img": "images/mvg2gptt.jpg"
+      "img": "images/mvg2gptt.jpg",
+      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/he-sings-over-you"
     },
     {
       "title": "Jekyll and Hyde",
