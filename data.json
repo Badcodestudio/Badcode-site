@@ -92,29 +92,22 @@
       "img": ""
     },
     {
-      "title": "Walking by Faith",
-      "spotify": "https://open.spotify.com/track/3Byl7Nm7skCxrtR8fMMgiA",
-      "apple": "https://music.apple.com/us/song/walking-in-faith-white/6803820472",
-      "code": "WF",
-      "color": "wf",
-      "img": ""
+      "title": "Crimson and White",
+      "spotify": "https://open.spotify.com/album/6HNwET2pxvkWLunyGSnVPo?si=DChrb-AmTIWCK7PQwSLUHQ&utm_source=copy-link",
+      "apple": "https://music.apple.com/us/album/crimson-and-white-single/6803820467",
+      "code": "CW",
+      "color": "cw",
+      "img": "images/mvg3mk41.jpg",
+      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/crimson-and-white"
     },
     {
-      "title": "Walking Blind",
-      "spotify": "https://open.spotify.com/track/07lYsEyP9rMyT1zSO9Zdhr",
-      "apple": "https://music.apple.com/us/song/walking-blind-crimson/6803820468",
-      "code": "WB",
-      "color": "wb",
-      "img": ""
-    },
-    {
-      "title": "Strays After Midnight",
-      "code": "AM",
+      "title": "Circus of Delusion",
+      "code": "CD",
       "color": "am",
-      "img": "",
-      "spotify": "",
-      "apple": "",
-      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/strays-after-midnight"
+      "img": "images/mvg322bu.jpg",
+      "spotify": "https://open.spotify.com/album/6m8VJI90tfNGkYCpOhii3o?si=D2vrm2PBSF6nPgNQFbk6Sg&utm_source=copy-link",
+      "apple": "https://music.apple.com/us/song/circus-of-delusion/6819224167",
+      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/circus-of-delusion"
     },
     {
       "title": "One Question, One Answer",
@@ -126,13 +119,13 @@
       "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/one-question-one-answer"
     },
     {
-      "title": "Circus of Delusion",
-      "code": "CD",
+      "title": "Strays After Midnight",
+      "code": "AM",
       "color": "am",
-      "img": "images/mvg322bu.jpg",
-      "spotify": "https://open.spotify.com/album/6m8VJI90tfNGkYCpOhii3o?si=D2vrm2PBSF6nPgNQFbk6Sg&utm_source=copy-link",
-      "apple": "https://music.apple.com/us/song/circus-of-delusion/6819224167",
-      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/circus-of-delusion"
+      "img": "",
+      "spotify": "",
+      "apple": "",
+      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/strays-after-midnight"
     }
   ],
   "videos": [
