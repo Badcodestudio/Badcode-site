@@ -36,6 +36,33 @@
   ],
   "music": [
     {
+      "title": "Crimson and White",
+      "spotify": "https://open.spotify.com/album/6HNwET2pxvkWLunyGSnVPo?si=DChrb-AmTIWCK7PQwSLUHQ&utm_source=copy-link",
+      "apple": "https://music.apple.com/us/album/crimson-and-white-single/6803820467",
+      "code": "CW",
+      "color": "cw",
+      "img": "images/mvg3mk41.jpg",
+      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/crimson-and-white"
+    },
+    {
+      "title": "Don't Touch",
+      "spotify": "https://open.spotify.com/album/3Oo6ZOzx5c3U8SEUHFbq2B?si=1anqP_BXRHCByvYXewmHiQ&utm_source=copy-link",
+      "apple": "https://music.apple.com/us/album/dont-touch-single/6804108326",
+      "code": "DT",
+      "color": "ri",
+      "img": "images/mvg3ve4o.jpg",
+      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/dont-touch"
+    },
+    {
+      "title": "Abyssal Metamorphosis",
+      "spotify": "https://open.spotify.com/track/36iIJ8xVgY00kbGIfTsBki",
+      "apple": "https://music.apple.com/ca/song/abyssal-metamorphosis/6807346410",
+      "code": "AM",
+      "color": "am",
+      "img": "",
+      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/abyssal-metamorphosis"
+    },
+    {
       "title": "He Sings Over You",
       "spotify": "https://open.spotify.com/track/2PfLh8SYH0eT86WixL6CqI",
       "apple": "https://music.apple.com/ca/song/he-sings-over-you/6810020432",
@@ -53,13 +80,6 @@
       "apple": "https://music.apple.com/us/album/jekyll-and-hyde-single/6809334453"
     },
     {
-      "title": "Monsters Can Be Tender Too",
-      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/monsters-can-be-tender-too",
-      "code": "MT",
-      "color": "mt",
-      "img": ""
-    },
-    {
       "title": "Unleash the Light",
       "spotify": "https://open.spotify.com/track/7hIoiGjABmpcYioQQkSeZJ",
       "apple": "https://music.apple.com/ca/song/unleash-the-light/6807696499",
@@ -69,33 +89,6 @@
       "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/unleash-the-light"
     },
     {
-      "title": "Abyssal Metamorphosis",
-      "spotify": "https://open.spotify.com/track/36iIJ8xVgY00kbGIfTsBki",
-      "apple": "https://music.apple.com/ca/song/abyssal-metamorphosis/6807346410",
-      "code": "AM",
-      "color": "am",
-      "img": "",
-      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/abyssal-metamorphosis"
-    },
-    {
-      "title": "Don't Touch",
-      "spotify": "https://open.spotify.com/album/3Oo6ZOzx5c3U8SEUHFbq2B?si=1anqP_BXRHCByvYXewmHiQ&utm_source=copy-link",
-      "apple": "https://music.apple.com/us/album/dont-touch-single/6804108326",
-      "code": "DT",
-      "color": "ri",
-      "img": "images/mvg3ve4o.jpg",
-      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/dont-touch"
-    },
-    {
-      "title": "Crimson and White",
-      "spotify": "https://open.spotify.com/album/6HNwET2pxvkWLunyGSnVPo?si=DChrb-AmTIWCK7PQwSLUHQ&utm_source=copy-link",
-      "apple": "https://music.apple.com/us/album/crimson-and-white-single/6803820467",
-      "code": "CW",
-      "color": "cw",
-      "img": "images/mvg3mk41.jpg",
-      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/crimson-and-white"
-    },
-    {
       "title": "Circus of Delusion",
       "code": "CD",
       "color": "am",
@@ -103,6 +96,13 @@
       "spotify": "https://open.spotify.com/album/6m8VJI90tfNGkYCpOhii3o?si=D2vrm2PBSF6nPgNQFbk6Sg&utm_source=copy-link",
       "apple": "https://music.apple.com/us/song/circus-of-delusion/6819224167",
       "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/circus-of-delusion"
+    },
+    {
+      "title": "Monsters Can Be Tender Too",
+      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/monsters-can-be-tender-too",
+      "code": "MT",
+      "color": "mt",
+      "img": ""
     },
     {
       "title": "One Question, One Answer",
