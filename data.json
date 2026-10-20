@@ -106,6 +106,15 @@
       "code": "WB",
       "color": "wb",
       "img": ""
+    },
+    {
+      "title": "Strays After Midnight",
+      "code": "AM",
+      "color": "am",
+      "img": "",
+      "spotify": "",
+      "apple": "",
+      "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/strays-after-midnight"
     }
   ],
   "videos": [
