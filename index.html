@@ -78,6 +78,8 @@ h2::before{content:'';display:inline-block;width:9px;height:9px;background:var(-
 .teaser h3{font-family:"Cormorant Garamond",serif;font-size:1.6rem;font-weight:600;margin-bottom:.4rem}
 .teaser p{color:var(--dim);font-size:.88rem;margin-bottom:1rem}
 .teaser .go{color:var(--gold);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em}
+.teaser .tag{display:inline-block;margin-bottom:.7rem;font-size:.68rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.12em;color:var(--gold);border:1px solid var(--gold-dim);border-radius:999px;padding:.15rem .6rem}
 
 /* Row list (music, video) */
 .rows{display:grid;gap:.65rem}
@@ -200,7 +202,7 @@ body.editing{padding-bottom:5.5rem}
 
 <nav class="bar" aria-label="Sections">
   <div class="wrap">
-    <a href="#books">Books</a><a href="#music">Music</a><a href="#video">Video</a><a href="#photos">Photos</a><a href="#follow">Follow</a><a href="#contact">Contact</a>
+    <a href="#books">Books</a><a href="#music">Music</a><a href="#video">Video</a><a href="#apps">Apps</a><a href="#photos">Photos</a><a href="#follow">Follow</a><a href="#contact">Contact</a>
   </div>
 </nav>
 
@@ -216,6 +218,8 @@ body.editing{padding-bottom:5.5rem}
   <section id="books"><div class="head"><h2>Books</h2><span class="count" id="books-count"></span></div><div class="books" id="books-list"></div></section>
   <section id="music"><div class="head"><h2>Music</h2><span class="count" id="music-count"></span></div><div class="rows" id="music-list"></div></section>
   <section id="video"><div class="head"><h2>Video</h2><span class="count" id="video-count"></span></div><div class="rows" id="video-list"></div></section>
+
+  <section id="apps"><div class="head"><h2>Apps</h2><span class="count" id="apps-count"></span></div><div class="teasers" id="apps-list"></div></section>
 
   <section id="photos">
     <div class="head"><h2>Photography</h2></div>
@@ -265,11 +269,24 @@ const SCHEMA = {
   videos:  { one:"video", title:"title", colors:REL_COLORS,
     blank:{title:"",url:"",code:"",color:"hs",img:"",date:""},
     fields:[["title","Title","text"],["url","Video link","text"],["code","Short code (2 letters)","text"],["color","Colour","color"],["img","Thumbnail image","img"],["date","Release date","date"]] },
+  apps:    { one:"app",   title:"name",
+    blank:{name:"",tag:"",blurb:"",url:""},
+    fields:[["name","Name","text"],["tag","Label (small tag)","text"],["blurb","Short description","text"],["url","Link","text"]] },
   socials: { one:"link",  title:"label",
     blank:{label:"",url:""},
     fields:[["label","Name","text"],["url","Link","text"]] }
 };
-const LIST_ID = { books:"books-list", music:"music-list", videos:"video-list", socials:"socials-list" };
+const LIST_ID = { books:"books-list", music:"music-list", videos:"video-list", apps:"apps-list", socials:"socials-list" };
+
+/* Shown until you save your own list from the editor (then data.json holds it). */
+const DEFAULT_APPS = [
+  { name:"Chimeramorphic", tag:"Hybrid character generator",
+    blurb:"Blend animals, myth and imagination into striking hybrid characters. Pick a form, set the style, create.",
+    url:"https://chimeramorphic.badcode.studio" },
+  { name:"Eidolon", tag:"18+ \u00b7 Now in testing",
+    blurb:"A dark-fantasy and mythology studio for adults: design intense creatures and characters, then turn them into 3D models.",
+    url:"https://eidolon.monster" }
+];
 
 let DATA = null;
 let editing = false, dirty = false;
@@ -318,6 +335,8 @@ const PUBLIC = {
   books: b => bookHTML(b),
   music: m => musicHTML(m),
   videos: v => videoHTML(v),
+  apps: a => `<a class="teaser" href="${esc(a.url)}" target="_blank" rel="noopener">${a.tag ? `<span class="tag">${esc(a.tag)}</span>` : ""}
+    <h3>${esc(a.name)}</h3><p>${esc(a.blurb)}</p><span class="go">Open ${esc(a.name)} &rarr;</span></a>`,
   socials: x => btn(x.url, esc(x.label))
 };
 
@@ -366,7 +385,9 @@ function renderAll(){
     pe.innerHTML = `<label>Picfair store link<input type="text" id="picfair-input" value="${esc(DATA.picfair)}" autocapitalize="off" autocomplete="off"></label>`;
   }
   $("picfair-link").href = DATA.picfair || "#";
+  $("apps").classList.toggle("hidden", !editing && DATA.apps.length === 0);
   const set = (id, txt) => { const e = $(id); if(e) e.textContent = txt; };
+  set("apps-count", DATA.apps.length + (DATA.apps.length === 1 ? " app" : " apps"));
   set("books-count", DATA.books.length + " on Amazon");
   set("music-count", DATA.music.filter(musicLive).length + " releases");
   const liveV = DATA.videos.filter(v => v.url).length;
@@ -379,6 +400,7 @@ async function load(){
     const r = await fetch("data.json?v=" + Date.now(), {cache:"no-store"});
     if(!r.ok) throw new Error("HTTP " + r.status);
     DATA = await r.json();
+    if(!Array.isArray(DATA.apps)) DATA.apps = DEFAULT_APPS.map(a => ({...a}));
     for(const k of Object.keys(SCHEMA)) if(!Array.isArray(DATA[k])) DATA[k] = [];
     if(typeof DATA.picfair !== "string") DATA.picfair = "";
     renderAll();
