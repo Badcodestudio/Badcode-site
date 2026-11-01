@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Books · Badcode.Studio</title>
+<meta name="description" content="Books by Philip Trapp on Amazon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="bar" aria-label="Pages">
+  <div class="wrap">
+    <a href="index.html">Home</a><a href="books.html" aria-current="page">Books</a><a href="music.html">Music</a><a href="video.html">Video</a><a href="apps.html">Apps</a><a href="photos.html">Photos</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <header class="page-head"><h1 class="page-title">Books</h1><p class="page-sub" data-count="books"></p></header>
+  <div id="load-error" class="loaderr hidden"></div>
+  <div class="content"><div class="books" data-list="books" data-editable></div></div>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="socials foot-social" data-list="socials"></div>
+    <p>Production inquiries and custom work:<br>
+    <a href="mailto:contact@badcode.studio">contact@badcode.studio</a></p>
+    <p style="margin-top:1rem">&copy; 2026 Badcode.Studio <button class="editlink" id="edit-link" type="button">Edit</button></p>
+  </div>
+</footer>
+
+<div class="editbar" id="editbar">
+  <div class="msg" id="edit-msg">Editing. Nothing is published until you tap Save.</div>
+  <button class="ebtn save" id="btn-save" type="button">Save</button>
+  <button class="ebtn" id="btn-done" type="button">Done</button>
+  <button class="ebtn danger" id="btn-signout" type="button">Sign out</button>
+</div>
+
+<script src="site.js"></script>
+</body>
+</html>
