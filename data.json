@@ -54,7 +54,7 @@
       "spotify": "https://open.spotify.com/album/3Oo6ZOzx5c3U8SEUHFbq2B?si=1anqP_BXRHCByvYXewmHiQ&utm_source=copy-link",
       "apple": "https://music.apple.com/us/album/dont-touch-single/6804108326",
       "code": "DT",
-      "color": "ri",
+      "color": "dt",
       "img": "images/mvg3ve4o.jpg",
       "hyperfollow": "https://distrokid.com/hyperfollow/philiptrapp/dont-touch",
       "date": "2026-09-11"
@@ -112,7 +112,7 @@
     {
       "title": "Circus of Delusion",
       "code": "CD",
-      "color": "am",
+      "color": "cw",
       "img": "images/mvg322bu.jpg",
       "spotify": "https://open.spotify.com/album/6m8VJI90tfNGkYCpOhii3o?si=D2vrm2PBSF6nPgNQFbk6Sg&utm_source=copy-link",
       "apple": "https://music.apple.com/us/song/circus-of-delusion/6819224167",
@@ -122,7 +122,7 @@
     {
       "title": "One Question, One Answer",
       "code": "OO",
-      "color": "am",
+      "color": "mt",
       "img": "images/mvg2zkxb.jpg",
       "spotify": "https://open.spotify.com/album/1PLhtMAvmgWf7vzowUaHDX?si=ogJWci_iSJGKHOiEh72bsQ&utm_source=copy-link",
       "apple": "https://music.apple.com/us/album/one-question-one-answer-single/6823363491",
@@ -131,8 +131,8 @@
     },
     {
       "title": "Strays After Midnight",
-      "code": "AM",
-      "color": "am",
+      "code": "SM",
+      "color": "tr",
       "img": "images/mvg3ytba.jpg",
       "spotify": "https://open.spotify.com/album/1bMyqP1jG1Qgn5y5BnyrC5?si=Apst7C04SHOptzKuiPRzyg&utm_source=copy-link",
       "apple": "https://music.apple.com/us/album/strays-after-midnight-single/6823438223",
@@ -142,7 +142,7 @@
     {
       "title": "Quad J's",
       "code": "QJ",
-      "color": "cw",
+      "color": "tr",
       "img": "images/mvjqwklh.jpg",
       "spotify": "",
       "apple": "",
@@ -211,7 +211,7 @@
       "title": "Circus of Delusion",
       "url": "https://distrokid.com/videos/watch/dv-R6po6HmZ9",
       "code": "CD",
-      "color": "hs",
+      "color": "cw",
       "img": "images/mvg6bzh1.jpg",
       "date": "2026-10-23"
     }
