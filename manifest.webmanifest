@@ -1,0 +1,21 @@
+{
+  "name": "Badcode.Studio",
+  "short_name": "Badcode",
+  "description": "Books, music, videos and apps from Badcode.Studio.",
+  "id": "./",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#08070b",
+  "theme_color": "#08070b",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Music", "url": "music.html" },
+    { "name": "Books", "url": "books.html" },
+    { "name": "Video", "url": "video.html" },
+    { "name": "Apps", "url": "apps.html" }
+  ]
+}
