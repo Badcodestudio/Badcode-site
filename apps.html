@@ -9,6 +9,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+/* QR code shown on each app card (set it in Edit mode with the "QR code image" field) */
+.qrwrap{display:flex;align-items:center;gap:1rem;margin-bottom:1.3rem}
+.qr{flex:0 0 auto;width:140px;height:140px;object-fit:contain;background:#fff;border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,.5)}
+.qrcap{color:var(--mute);font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;line-height:1.4}
+</style>
 </head>
 <body>
 
@@ -41,5 +48,27 @@
 </div>
 
 <script src="site.js"></script>
+<script>
+/* Apps page extras: each app can carry a QR code image. */
+SCHEMA.apps.blank.qr = "";
+SCHEMA.apps.fields.push(["qr","QR code image","img"]);
+PUBLIC.apps = a => `<a class="teaser" href="${esc(a.url)}" target="_blank" rel="noopener">${a.tag ? `<span class="tag">${esc(a.tag)}</span>` : ""}
+    <h3>${esc(a.name)}</h3><p>${esc(a.blurb)}</p>${a.qr ? `<span class="qrwrap"><img class="qr" src="${esc(a.qr)}" alt="QR code for ${esc(a.name)}" loading="lazy"><span class="qrcap">Scan to<br>open</span></span>` : ""}<span class="go">Open ${esc(a.name)} &rarr;</span></a>`;
+/* Fill transparent images with white so a QR code never turns black when uploaded. */
+shrink = (file, max) => new Promise((res, rej) => {
+  const url = URL.createObjectURL(file), img = new Image();
+  img.onload = () => {
+    const s = Math.min(1, max / Math.max(img.width, img.height));
+    const c = document.createElement("canvas");
+    c.width = Math.round(img.width * s); c.height = Math.round(img.height * s);
+    const x = c.getContext("2d"); x.fillStyle = "#fff"; x.fillRect(0, 0, c.width, c.height);
+    x.drawImage(img, 0, 0, c.width, c.height);
+    URL.revokeObjectURL(url);
+    res(c.toDataURL("image/jpeg", 0.9).split(",")[1]);
+  };
+  img.onerror = () => { URL.revokeObjectURL(url); rej(new Error("That file is not an image the browser can read.")); };
+  img.src = url;
+});
+</script>
 </body>
 </html>
