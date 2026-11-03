@@ -15,8 +15,8 @@
 <script>if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))</script>
 <style>
 /* QR code shown on each app card (set it in Edit mode with the "QR code image" field) */
-.qrwrap{display:flex;align-items:center;gap:1rem;margin-bottom:1.3rem}
-.qr{flex:0 0 auto;width:140px;height:140px;object-fit:contain;background:#fff;border-radius:12px;
+.qrwrap{display:flex;flex-wrap:wrap;align-items:center;gap:.9rem 1.1rem;margin-bottom:1.3rem}
+.qr{flex:0 0 auto;width:200px;height:220px;max-width:100%;object-fit:contain;background:#fff;border-radius:12px;
   box-shadow:0 6px 18px rgba(0,0,0,.5)}
 .qrcap{color:var(--mute);font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;line-height:1.4}
 </style>
